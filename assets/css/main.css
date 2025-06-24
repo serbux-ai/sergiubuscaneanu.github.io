@@ -46,6 +46,15 @@ blockquote, q {
 		content: none;
 	}
 
+	/* Immer sichtbar, sofort, ohne Diskussion 😤 */
+html, body {
+  background-color: #f8f9fa !important; /* oder dein Wunschhintergrund */
+  margin: 0 !important;
+  padding: 0 !important;
+  scroll-behavior: smooth !important;
+  transition: none !important;
+}
+
 
 #intro::before {
 	content: '' !important;
@@ -74,8 +83,14 @@ blockquote, q {
 
 
 
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
 
-
+body.loaded {
+  opacity: 1;
+}
 
 
 
@@ -4692,3 +4707,8 @@ blockquote, q {
 		}
 
 	}
+
+
+body.is-preload {
+  background-color: #f8f9fa !important;
+}
